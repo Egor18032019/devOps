@@ -20,7 +20,7 @@
 
 ## Ignore all git- and docker- stuff, hidden files
 Dockerfile*
-.[a-z]*
+
 ## Ignore MarkDown-Docs
 *.md
 ## local dev-stuff
@@ -30,3 +30,5 @@ mvnw*
 Makefile*
 
 ## App
+.deploy/config
+.deploy/config/.runner_system_id

@@ -6,8 +6,9 @@ stages:
 
 job-lint:
   stage: lint
+  image: hadolint/hadolint
   script:
-    - echo "This job lint something"
+    - docker run --rm -i hadolint/hadolint < .deploy/docker/Dockerfile
 
 job-build:
   stage: build
