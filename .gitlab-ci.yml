@@ -17,4 +17,4 @@ job-build:
 job-deploy:
   stage: deploy
   script:
-    - echo "This job build something"
+    - echo "This job deploy something"
