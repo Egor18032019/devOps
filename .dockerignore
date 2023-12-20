@@ -11,7 +11,6 @@
 *~
 *.bak
 *.local
-*.swp
 ## Local
 .DS_Store
 .env
@@ -30,5 +29,4 @@ mvnw*
 Makefile*
 
 ## App
-.deploy/config
-.deploy/config/.runner_system_id
+
