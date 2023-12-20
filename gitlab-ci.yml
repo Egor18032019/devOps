@@ -3,3 +3,18 @@ stages:
   - lint
   - build
   - deploy
+
+job-lint:
+  stage: lint
+  script:
+    - echo "This job lint something"
+
+job-build:
+  stage: build
+  script:
+    - echo "This job build something"
+
+job-deploy:
+  stage: deploy
+  script:
+    - echo "This job build something"
