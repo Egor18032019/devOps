@@ -1,0 +1,52 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: foo-app
+  namespace: exercise-02
+  labels:
+    app.kubernetes.io/name: proxy
+spec:
+  containers:
+    - name: foo-app
+      image: egor140512/exercise:0.4
+      env:
+        - name: POSTGRESQL_URL
+          value: postgresql://worker:worker@first-postgresql/app
+      ports:
+        - containerPort: 5001
+          name: web
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: foo-app-service
+  namespace: exercise-02
+spec:
+  selector:
+    app.kubernetes.io/name: proxy
+  ports:
+    - name: foo-app-port
+      protocol: TCP
+      port: 80
+      targetPort: web
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend-foo-app
+  namespace: exercise-02
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+#    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: foo-app-service
+                port:
+                  number: 80

@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  app:
+    user: "${USER_UID}:${USER_GID}"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+#      - FLASK_APP=${FLASK_APP}
+      - POSTGRESQL_URL=${POSTGRESQL_URL}
+      - MIGRATION=${MIGRATION}
+    networks:
+      - app
+
+  db:
+    #todo как лучше использовать бд без рута или добавить папку data в .dockerignore ?
+
+    image: postgres:14-alpine
+    # переменные окружения для БД
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U app" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
