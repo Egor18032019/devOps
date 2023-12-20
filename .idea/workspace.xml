@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce747978-b4be-4546-8210-7967779f467a" name="Changes" comment="feat: add gitlab-runner">
+    <list default="true" id="ce747978-b4be-4546-8210-7967779f467a" name="Changes" comment="feat: add gitlab-runner config">
       <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +73,20 @@
       <option name="project" value="LOCAL" />
       <updated>1703088384552</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: add gitlab-runner">
+      <option name="closed" value="true" />
+      <created>1703088972412</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703088972412</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add gitlab-runner" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add gitlab-runner" />
+    <MESSAGE value="feat: add gitlab-runner config" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add gitlab-runner config" />
   </component>
 </project>

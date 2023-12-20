@@ -1,8 +1,15 @@
 ---
 stages:
-  - lint
-  - build
+  - test
   - deploy
+  - build
+  - lint
+
+job-test:
+  stage: lint
+  image: hadolint/hadolint
+  script:
+    - docker run --rm -i hadolint/hadolint < .deploy/docker/Dockerfile
 
 job-lint:
   stage: lint
