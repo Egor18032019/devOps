@@ -25,6 +25,8 @@ job-build:
   tags:
     - docker
   script:
+    - docker info
+    - docker login --username ${DOCKER_NAME} --password ${DOCKER_PS}
     - docker build /builds/simbirsoft1/devops-workshop-2023-12/prishedko.egor/exercise-03/.deploy/docker/ -t egor140512/exercise:0.5.1
     - docker push egor140512/exercise:0.5.1
 
