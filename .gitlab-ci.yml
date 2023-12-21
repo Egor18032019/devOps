@@ -30,7 +30,7 @@ job-build:
 
 job-deploy:
   stage: deploy
-  image: bitnami/kubectl:1.26.12
+#  image: bitnami/kubectl:1.26.12
   tags:
     - docker
   script:

@@ -7,4 +7,5 @@ docker pull gitlab/gitlab-runner
 * и взять токен
 Доабвить токен
 Сделать комит и запушить
+для проверки результата  на гит лаб проект job
 helm upgrade --install first bitnami/postgresql -f helm.yaml -n exercise-02
