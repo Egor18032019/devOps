@@ -25,7 +25,7 @@ job-build:
   tags:
     - docker
   script:
-    - docker build /builds/simbirsoft1/devops-workshop-2023-12/prishedko.egor/exercise-03/.deploy/docker/Dockerfile -t egor140512/exercise:${CI_COMMIT_SHORT_SHA}
+    - docker build /builds/simbirsoft1/devops-workshop-2023-12/prishedko.egor/exercise-03/.deploy/docker/Dockerfile -t egor140512/exercise:0.5.1
     - docker push egor140512/exercise:0.5.1
 
 job-deploy:
