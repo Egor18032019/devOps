@@ -6,23 +6,32 @@ stages:
   - lint
 
 job-test:
-  stage: lint
-  image: hadolint/hadolint
+  stage: test
+  tags:
+    - docker
   script:
-    - docker run --rm -i hadolint/hadolint < .deploy/docker/Dockerfile
+    - echo "This job test app"
 
 job-lint:
   stage: lint
   image: hadolint/hadolint
+  tags:
+    - docker
   script:
     - docker run --rm -i hadolint/hadolint < .deploy/docker/Dockerfile
 
 job-build:
   stage: build
+  tags:
+    - docker
   script:
-    - echo "This job build something"
+    - docker build .deploy/docker/Dockerfile -t egor140512/exercise:${CI_COMMIT_SHORT_SHA}
+    - docker push egor140512/exercise:0.5.1
 
 job-deploy:
   stage: deploy
+  image: bitnami/kubectl:1.26.12
+  tags:
+    - docker
   script:
     - echo "This job deploy something"
