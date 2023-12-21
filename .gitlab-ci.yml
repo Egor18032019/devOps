@@ -1,9 +1,9 @@
 ---
 stages:
-  - lint
   - test
   - build
   - deploy
+  - lint
 
 job-test:
   stage: test
