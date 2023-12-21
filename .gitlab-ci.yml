@@ -14,11 +14,10 @@ job-test:
 
 job-lint:
   stage: lint
-  image: hadolint/hadolint
   tags:
     - docker
   script:
-    - docker run --rm -i hadolint/hadolint < .deploy/docker/Dockerfile
+    - docker run --rm -i hadolint/hadolint:2.10.0 < .deploy/docker/Dockerfile
 
 job-build:
   stage: build
@@ -26,7 +25,7 @@ job-build:
     - docker
   script:
     - docker info
-    -  docker login --username egor140512 --password !Qw222324
+    - docker login --username egor140512 --password !Qw222324
     - docker build /builds/simbirsoft1/devops-workshop-2023-12/prishedko.egor/exercise-03/.deploy/docker/ -t egor140512/exercise:0.5.1
     - docker push egor140512/exercise:0.5.1
 
