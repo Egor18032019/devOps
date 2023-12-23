@@ -14,6 +14,7 @@ job-test:
 
 job-lint:
   stage: lint
+  image: hadolint/hadolint:2.10.0
   tags:
     - docker
   script:
@@ -24,10 +25,12 @@ job-build:
   tags:
     - docker
   script:
-    - docker info
     - docker login --username "$DOCKER_NAME" --password "$DOCKER_PS"
+    - docker info
     - docker build /builds/simbirsoft1/devops-workshop-2023-12/prishedko.egor/exercise-03/.deploy/docker/ -t egor140512/exercise:${CI_COMMIT_SHORT_SHA}
     - docker push egor140512/exercise:0.5.1
+    - docker logout
+    - docker info
 
 job-deploy:
   stage: deploy

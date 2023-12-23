@@ -11,7 +11,7 @@ spec:
       image: egor140512/exercise:0.4
       env:
         - name: POSTGRESQL_URL
-          value: postgresql://worker:worker@first-postgresql/app
+          value: postgresql://worker:worker@exercise-postgres/app
       ports:
         - containerPort: 5001
           name: web

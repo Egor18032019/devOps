@@ -2,9 +2,9 @@
   
 * Для установки раннера необходимо выполнить следующее:
 
-* * docker pull gitlab/gitlab-runner
+* * в папке проекта выполнить команду docker-compose up
     * настроить гитлаб раннер
-* *  docker exec -it gitlab-runner bash
+* *  docker exec -it exercise-03_gitlab-runner_1 bash
      * зарегистрироваться командной 
 * gitlab-runner register 
 * * * Далее в /etc/gitlab-runner/config выставить следующие настройки

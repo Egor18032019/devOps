@@ -16,7 +16,7 @@ docker-compose up
 curl -i -X GET http://127.0.0.1:5001/api/user
 ```
 ```shell
-curl -i -X POST http://127.0.0.1:5001/api/user -H 'Content-Type: application/json' -d '{"username":"user1234","email":"u1ser@example.com" ,"password_hash":"password_hash"}'
+curl -i -X POST http://127.0.0.1:80/api/user -H 'Content-Type: application/json' -d '{"username":"user1234","email":"u1ser@example.com" ,"password_hash":"password_hash"}'
 ```
 ```shell
 curl -i -X GET http://127.0.0.1:80/api/user
