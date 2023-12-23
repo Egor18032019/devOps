@@ -34,8 +34,16 @@ job-build:
 
 job-deploy:
   stage: deploy
-#  image: bitnami/kubectl:1.26.12
+  image: bitnami/kubectl:1.26.12
   tags:
     - docker
+  before_script:
+    - kubectl get nodes
   script:
-    - echo "This job deploy something"
+    - kind create cluster --config kind.yaml -n simbir
+    - kubectl apply -f ns.yaml
+    - kubectl apply -f postgresql.yaml
+    - kubectl apply -f application.yaml
+    - kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+after_script:
+  - echo "deploy finished"
