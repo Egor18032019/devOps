@@ -31,6 +31,8 @@ job-build:
     - docker push egor140512/exercise:0.5.1
     - docker logout
     - docker info
+  after_script:
+    - docker info
 
 job-deploy:
   stage: deploy
