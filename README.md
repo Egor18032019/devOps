@@ -20,7 +20,5 @@
 
 
 
-
-
-git remote add github git@github.com:Egor18032019/devOps.git
+ 
 helm upgrade --install first bitnami/postgresql -f helm.yaml -n exercise-02
