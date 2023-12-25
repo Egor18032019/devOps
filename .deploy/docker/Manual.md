@@ -3,7 +3,7 @@
 1. Скачать (git clone <ur>)
 2. Создайте файл с секретами `.env` (например, из файла образца `.env.example` ).
 ```shell
-cp .env.example .env 
+cp .env .env 
 ```
 3. Зайти с помощью терминала/Windows power shell в папку проекта выполнить команду `docker compose up`.
 ```shell

@@ -1,5 +1,5 @@
-kind: Pod
 apiVersion: v1
+kind: Pod
 metadata:
   name: foo-app
   namespace: exercise-02
@@ -9,6 +9,13 @@ spec:
   containers:
     - name: foo-app
       image: egor140512/exercise:0.4
+      resources:
+        requests:
+          memory: "200Mi"
+          cpu: "100m"
+        limits:
+          memory: "200Mi"
+          cpu: "100m"
       env:
         - name: POSTGRESQL_URL
           value: postgresql://worker:worker@exercise-postgres/app

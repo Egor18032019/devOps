@@ -15,13 +15,13 @@ destroy:
 
 waitIngress:
 	kubectl wait --namespace ingress-nginx \
-	for=condition=ready pod \
+	for=condition=Ready pod \
 	-selector=app.kubernetes.io/component=controller \
 	-timeout=300s
 
 
 waitDB:
 kubectl wait --namespace exercise-02
-	for=condition=ready pod \
+	for=condition=Ready pod \
 	-l app=db  \
 	-timeout=300s
